@@ -1,0 +1,66 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>济胜软件有限公司—客服中心</title>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<style type="text/css">
+<!--
+body {
+	background-color: #3399FF;
+}
+.STYLE1 {
+	color: #000000;
+	font-weight: bold;
+}
+-->
+</style></head>
+  
+
+<body>
+  <div align="center"><strong>济胜软件—在线客服列表</strong></div>
+<div class="STYLE1"> 
+  <div align="left">QQ客服服务时间：周一至周五 白班上午8：30--下午5：30 </div>
+</div>
+<hr />
+
+<div id="qqlist">
+  <P>济胜客服—包(412751211) <A href="http://wpa.qq.com/msgrd?V=1&amp;Uin=412751211&amp;Site=412751211&amp;Menu=no" target=_blank><IMG height=29 alt=点击交谈或留言 src="http://wpa.qq.com/pa?p=1:412751211:13" width=138 border=0></A>
+</P>
+
+<div>
+<script>
+	$(function(){
+		$.ajax({type:"get",
+				url:"getAgentQQByDognumber.asp",
+				async:true,
+				data:{
+					dognumber:getUrlParam('dognumber')
+				},
+				success:function(data){
+				    var strhtml = '';
+					var obj = eval('(' + data + ')');  
+					//console.log(obj.rows[0].qqname);
+				    for(var i=0;i<obj.rows.length;i++){
+						strhtml += '<p>'+obj.rows[i].qqname+'('+obj.rows[i].qq+')'+'<img height=29 alt="点击交谈或留言" '+
+						' src="http://wpa.qq.com/pa?p=1:'+obj.rows[i].qq+':13" width=138 border=0 onClick="sendmsg('+obj.rows[i].qq+')"></p>';
+					}
+				    
+					$('#qqlist').html(strhtml);
+				}})
+	})
+	
+	function sendmsg(qq){
+		window.open('tencent://message/?uin='+qq);
+	}
+	
+	//获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+</script>
+</body>
+</html>
