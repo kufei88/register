@@ -17,6 +17,7 @@
 	if rsUser.BOF and rsUser.EOF then
 	  sql = "insert into  agent (company,username,password,taskmoney,number,begindate) values ('"_
 	  &company&"','"&username&"','"&encode&"',"&taskmoney&",'"&number&"','"&begindate&"')"
+	  
 	  conn.execute(sql)
 	  response.write "success"
 	  

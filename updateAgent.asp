@@ -27,7 +27,7 @@
 		encode = aes.CipherStrToHexStr (128,password , "abcdefgh12345678")
 		sql = "update  agent set username='"&username&"',company='"&company&"',password='"&encode&"',taskmoney="&taskmoney&",number='"&number&"',begindate='"&begindate&"' where username ='"&old&"'"
 	  end if
-	  response.write sql
+	  
 	  conn.execute(sql)
 	  
 	  response.write "success"

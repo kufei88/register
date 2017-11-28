@@ -464,6 +464,15 @@
                 DataBind3=NULL
             END IF
         END FUNCTION
+		
+		PUBLIC FUNCTION getObject()
+				DIM jObj
+                SET jObj=nO()
+				SET jObj.member("rows")=nV(10)
+                
+                SET getObject=jObj
+            
+        END FUNCTION
     END CLASS
     
 </Script>
