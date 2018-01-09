@@ -1,7 +1,7 @@
 ﻿<!-- #include file="conn.asp" -->
 
 <%
-	username = session("admin")
+	username = "admin"
 	qqname = request("qqname")
 	qq = request("qq")
 	

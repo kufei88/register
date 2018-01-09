@@ -10,11 +10,11 @@
 	page = request("page")
 	username = session("admin")
     set rsUser = server.CreateObject("adodb.recordset")
-    sqlcount = "select count(*) from agentQQ where username='"&username&"' "
+    sqlcount = "select count(*) from agentQQ where username='admin' "
 	set rs1=conn.execute(sqlcount)
 	rowCount=rs1(0)
 	
-    sql = "select * from agentQQ where username='"&username&"' "
+    sql = "select * from agentQQ where username='admin' "
     
     rsUser.Open sql,conn,1,1
     SET jObj=NEW simpleJson

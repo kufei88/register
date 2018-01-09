@@ -15,7 +15,8 @@
 	rowCount=rs1(0)
 	
     sql = "select top "&rows&" a.id,a.Company,a.[User],uuid,a.date,a.remark,b.company as agent,"&_
-	"(case when isnull(version,0)=0 then '普通版' when isnull(version,0)=1 then '客户跟踪' else '增强版' end) as version from "&_
+	"(case when isnull(version,0)=0 then '普通版' when isnull(version,0)=1 then '客户跟踪' else '增强版' end) as version,"&_
+	"version as realversion,a.agent as realagent from "&_
 	"jsphoneuuid a left join agent b on a.agent=b.username"&_
 	" where (a.company like '%"&company&"%' or b.company like '%"&company&"%') and a.ID not in (select top "&((page-1)*rows)&_
 	" a.id from jsphoneuuid a left join agent b on a.agent=b.username"&_

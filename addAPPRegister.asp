@@ -1,7 +1,7 @@
 ﻿<!-- #include file="conn.asp" -->
 <!--#include virtual="aes.asp"-->
 <%
-	company = request("Company")
+	company = request("company")
 	User = request("User")
 	uuid = request("uuid")
 	
@@ -74,9 +74,7 @@
 		end if
 		rsUser.close
 		
-		sql = "insert into  jsphoneuuid (company,[user],uuid,date,remark,agent,version) values ('"_
-			&company&"','"&User&"','"&uuid&"',getdate(),'"&remark&"','"&agent&"',"&version&")"
-			conn.execute(sql)
+		
 			sql = "update agent set jsmoney=isnull(jsmoney,0)-"&price&" where username='"&agent&"'"
 			conn.execute(sql)
 			sql = "insert registerhistory (username,registerDate,client,newVersion,discount,consumeJS,ip,JSMoney,memo)"&_
@@ -84,7 +82,7 @@
 				getipadd()&"',"&(jsmoney - price)&",'"&remark&"')"
 			
 			conn.execute(sql)
-		    response.write "success"
+		    
 	  response.write "success"
 	  
 	else

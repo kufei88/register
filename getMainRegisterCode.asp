@@ -16,7 +16,7 @@
 	oldnumber= request("oldnumber")
 	registerCharge= request("registerCharge")
 	discount= request("discount")
-	username = request("client")
+	username = request("username")
 	remark = request("remark")
 	state = request("state")
 	set rsUser = server.CreateObject("adodb.recordset")
