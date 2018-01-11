@@ -7,7 +7,7 @@
 	
 	
 	if client <> "" then
-	  str1 = " and b.company='"&client&"' "
+	  str1 = " and clientName='"&client&"' "
 	end if
 	if searchDate <> "" then
 	  str2 = " and trialDate>'"&searchDate&"' "
