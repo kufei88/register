@@ -1,63 +1,38 @@
-﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>登录</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<script language="JavaScript" src="js/jquery.js"></script>
-<script src="js/cloud.js" type="text/javascript"></script>
-
-<script language="javascript">
-	$(function(){
-    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
-	$(window).resize(function(){  
-    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
-    })  
-});  
-</script> 
-
+    <title>济胜软件售后服务平台</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link rel="stylesheet" href="./distIndex/main.40d765ff8c0c343b9203.css">
+    <link rel="stylesheet" name="theme" href="">
+    <link rel="icon" href="./td_icon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./distIndex/simplemde.min.css">
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
+            background: #f0f0f0;
+        }
+        .lock-screen-back{
+            border-radius: 50%;
+            z-index: -1;
+            box-shadow: 0 0 0 0 #667aa6 inset;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition: all 3s;
+        }
+    </style>
 </head>
 
-<body style="background-color:#1c77ac; background-image:url(images/light.png); background-repeat:no-repeat; background-position:center top; overflow:auto;">
-
-
-
-    <div id="mainBody">
-      <div id="cloud1" class="cloud"></div>
-      <div id="cloud2" class="cloud"></div>
-    </div>  
-
-
-
-    <form id="form1" name="form1" method="post" action="agentMain.asp">
-      <div class="loginbody"> <span class="systemlogo"></span>
-          <div class="loginbox">
-            <ul>
-              <li>
-                <input name="userid" id="userid" type="text" class="loginuser"  onclick="JavaScript:this.value=''"/>
-              </li>
-              <li>
-                <input name="pwd" id="pwd" type="password" class="loginpwd"  onclick="JavaScript:this.value=''"/>
-              </li>
-			  
-			  <li>
-                <input name="VerifyCode" id="VerifyCode" type="text" class="loginyzm"  onclick="JavaScript:this.value=''"/>
-				<img src="Code_5.Asp"/>
-              </li>
-              <li>
-                <input name="login" type="submit" class="loginbtn" id="login" value="登录" >
-                
-              </li>
-            </ul>
-          </div>
-      </div>
-	  <input type="hidden" id="isCode" name="isCode" value="1" >
-        </form>
-    <div class="loginbm">CopyRight &copy; 2016 金华济胜软件有限公司 All Rights Reserved.&nbsp;&nbsp;电话：0579-83181608</div>
-	
-    
+<body>
+    <div id="app"></div>
+    <div class="lock-screen-back" id="lock_screen_back"></div>
+    <script type="text/javascript" src="./distIndex/vendors.40d765ff8c0c343b9203.js"></script>
+    <script type="text/javascript" src="./distIndex/main.40d765ff8c0c343b9203.js"></script>
 </body>
 
 </html>

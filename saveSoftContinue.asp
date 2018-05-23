@@ -3,30 +3,8 @@
 <%Response.Charset="utf-8"%>
 <!--#include virtual="aes.asp"-->
 <!--#include file="conn.asp"-->
-<!--#include file="agentValidate.asp"-->
 <%
 
-
-
-'-----对 post 表 单值的过滤.
-'if request.form<>"" then
-'Chk_badword=split(Form_Badword,"‖")
-'FOR EACH form_name IN Request.Form
-'for i=0 to ubound(Chk_badword)
-'If Instr(LCase(request.form(form_name)),Chk_badword(i))<>0 Then
-'Select Case Err_Message
-'Case "1"
-'Response.Write "<Script Language=JavaScript>alert('出错了！表单 "&form_name&" 的值中包含非法字符串！\n\n请不要在表单中出现： % & * # ( ) 等非法字符！');window.close();</Script>"
-'Case "2"
-'Response.Write "<Script Language=JavaScript>location.href='"&Err_Web&"'</Script>"
-'Case "3"
-'Response.Write "<Script Language=JavaScript>alert('出错了！参数 "&form_name&"的值中包含非法字符串！\n\n请不要在表单中出现： % & * # ( ) 等非法字符！');location.href='"&Err_Web&"';</Script>"
-'End Select
-'Response.End
-'End If
-'NEXT
-'NEXT
-'end if
 
 
 dim aes, s, key, Result, CipherText, KeySize, sKeySize,sstate,scombine

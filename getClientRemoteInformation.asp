@@ -13,7 +13,7 @@
 	set rs1=conn.execute(sqlcount)
 	rowCount=rs1(0)
 	
-    sql = "select top "&rows&" ClientID,Company,UserName,Password,ServerIP,domain from ClientInformation "&_
+    sql = "select top "&rows&" ClientID,Company,UserName,Password,ServerIP,domain,domain1,remark from ClientInformation "&_
 	" where company like '%"&company&"%' and ClientID not in (select top "&((page-1)*rows)&_
 	" clientid from clientinformation where company like '%"&company&"%' order by clientid) order by clientid"
     
